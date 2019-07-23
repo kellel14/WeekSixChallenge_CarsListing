@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars and Categories</title>
+</head>
+<body>
+
+<div class="container" align="center">
+    <a href="/addcar">Add a Car</a>
+    <h1>Cars and their Categories</h1>
+
+    <div th:each="category : ${categories}">
+
+        <h2 th:text="${category.categoryName}"></h2>
+
+        <h3 th:text="${#lists.size(cars.findAllBy(category.id))>0}?'My Cars':'No cars for me'"></h3>
+
+            <div th:each="carObj : ${cars.findAll(category.id)}">
+                <p th:text="${carObj.car.categoryName}"></p>
+            </div>
+
+    </div>
+</div>
+
+</body>
+</html>
