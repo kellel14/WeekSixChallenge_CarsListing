@@ -78,4 +78,22 @@ public class HomeController {
         category.setCategoryName("Truck");
         categoryRepository.save(category);
     }
+
+    @RequestMapping("/detail/car/{id}")
+    public String showCar(@PathVariable("id") long id, Model model){
+        model.addAttribute("categories", categoryRepository.findAll());
+        model.addAttribute("car", carRepository.findById(id).get());
+        return "carlist";
+    }
+    @RequestMapping("/update/car{id}")
+    public String updateCar(@PathVariable("id") long id, Model model){
+        model.addAttribute("car", carRepository.findById(id).get());
+        return "carform";
+
+    }
+    @RequestMapping("/delete/car{id}")
+    public  String delCar(@PathVariable("id") long id){
+        carRepository.deleteById(id);
+        return "redirect:/";
+    }
 }

@@ -14,10 +14,10 @@
 
         <h2 th:text="${category.categoryName}"></h2>
 
-        <h3 th:text="${#lists.size(cars.findAllBy(category.id))>0}?'My Cars':'No cars for me'"></h3>
+        <h3 th:text="${#lists.size(carCategory.findAllByCategory(category))>0}?'My Cars':'No cars for me'"></h3>
 
-            <div th:each="carObj : ${cars.findAll(category.id)}">
-                <p th:text="${carObj.car.categoryName}"></p>
+            <div th:each="carObj : ${carCategory.findAllByCategory(category)}">
+                <p th:text="${carObj.vehicle.carName}"></p>
             </div>
 
     </div>

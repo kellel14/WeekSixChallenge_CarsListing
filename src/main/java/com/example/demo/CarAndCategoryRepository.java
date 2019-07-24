@@ -5,6 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 public interface CarAndCategoryRepository extends
         CrudRepository<CarAndCategory, Long>{
 
-    Iterable<CarAndCategory> findAllByCarType_id(Long vehicle_id);
+//    Iterable<CarAndCategory> findAllByVehicle_Id(Long category_id);
+    Iterable<CarAndCategory> findAllByCategory(Category category);
+
 
 }

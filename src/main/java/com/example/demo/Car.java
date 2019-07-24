@@ -11,10 +11,10 @@ public class Car {
     private long id;
 
     private String carName;
-//    private String carModel;
-//    private String carManufacturer;
-//    private int carYear;
-//    private float MSRP;
+    private String carModel;
+    private String carManufacturer;
+    private int carYear;
+    private float carMSRP;
 
 
 
@@ -47,5 +47,37 @@ public class Car {
 
     public void setCarCategory(Set<CarAndCategory> carCategory) {
         this.carCategory = carCategory;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public String getCarManufacturer() {
+        return carManufacturer;
+    }
+
+    public void setCarManufacturer(String carManufacturer) {
+        this.carManufacturer = carManufacturer;
+    }
+
+    public int getCarYear() {
+        return carYear;
+    }
+
+    public void setCarYear(int carYear) {
+        this.carYear = carYear;
+    }
+
+    public float getCarMSRP() {
+        return carMSRP;
+    }
+
+    public void setCarMSRP(float carMSRP) {
+        this.carMSRP = carMSRP;
     }
 }

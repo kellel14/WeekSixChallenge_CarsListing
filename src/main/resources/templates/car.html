@@ -7,20 +7,48 @@
 <body>
 
 <h1>Car Form</h1>
+<!--<form action="#" th:action="@{/processcar}"-->
+      <!--th:object="${car}" method="post">-->
+
+    <!--<div class="container">-->
+        <!--<input type="hidden" th:field="*{id}"/>-->
+        <!--<input type="text" th:field="*{carManufacturer}"/>-->
+        <!--<input type="text" th:field="*{carModel}"/>-->
+        <!--<input type="number" th:field="*{carMSRP}"/>-->
+        <!--<input type="number" th:field="*{carYear}"/>-->
+        <!--<select th:field="*{carCategory}" multiple>-->
+            <!--<option th:each="categoryType: ${categories}" th:text="${categoryType.categoryName}" th:value="${categoryType.id}"></option>-->
+        <!--</select>-->
+    <!--</div>-->
+    <!--<button type="submit">Save Car</button>-->
+
+<!--</form>-->
+<div class="row" th:class="col-6">
 <form action="#" th:action="@{/processcar}"
       th:object="${car}" method="post">
-
-    <div class="container">
-        <input type="hidden" th:field="*{id}"/>
-        <input type="text" th:field="*{manufacturer}"/>
-        <input type="text" th:field="*{model}"/>
-        <input type="text" th:field="*{msrp}"/>
-        <select th:field="*{catCars}" multiple>
-            <option th:each="cat: ${category}" th:text="${cat.type}" th:value="${cat.id}"></option>
-        </select>
+    <div class="form-group">
+        <label for="formGroupExampleInput0"></label>
+        <input type="hidden" class="form-control" id="formGroupExampleInput0" placeholder="hidden input" th:field="*{id}">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Manufacturer</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input" th:field="*{carManufacturer}">
+    </div><br/>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Model</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input" th:field="*{carModel}">
+    </div><br/>
+    <div class="form-group">
+        <label for="formGroupExampleInput3">MSRP</label>
+        <input type="number" class="form-control" id="formGroupExampleInput3" placeholder="Third input" th:field="*{carMSRP}">
+    </div><br/>
+    <div class="form-group">
+        <label for="formGroupExampleInput4">Year</label>
+        <input type="number" class="form-control" id="formGroupExampleInput4" placeholder="Fourth input" th:field="*{carYear}">
     </div>
     <button type="submit">Save Car</button>
 
 </form>
+</div>
 </body>
 </html>
