@@ -12,11 +12,15 @@ public class Category {
 
     private String categoryName;
 
-    @OneToMany(mappedBy = "category")
+    @ManyToOne(fetch = FetchType.EAGER)
     private Set<CarAndCategory> carCategory;
 
-    public Category(){
-        carCategory = new HashSet<>();
+//    public Category(){
+//        carCategory = new HashSet<>();
+//    }
+
+
+    public Category() {
     }
 
     public long getId() {

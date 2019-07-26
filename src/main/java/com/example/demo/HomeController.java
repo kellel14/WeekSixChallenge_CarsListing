@@ -32,7 +32,7 @@ public class HomeController {
     {
         model.addAttribute("car", new Car());
         model.addAttribute("categories", categoryRepository.findAll());
-        return "car";
+        return "carform";
     }
 
 
