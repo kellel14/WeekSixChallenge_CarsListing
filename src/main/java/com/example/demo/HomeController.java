@@ -63,6 +63,9 @@ public class HomeController {
 //        return "redirect:/";
 //    }
 
+//add get + post mapping methods for addcategory here
+//add cloudinary configuration for image upload 
+
     @PostConstruct
     public void fillTables()
     {
@@ -85,13 +88,13 @@ public class HomeController {
         model.addAttribute("car", carRepository.findById(id).get());
         return "carlist";
     }
-    @RequestMapping("/update/car{id}")
+    @RequestMapping("/update/car/{id}")
     public String updateCar(@PathVariable("id") long id, Model model){
         model.addAttribute("car", carRepository.findById(id).get());
         return "carform";
 
     }
-    @RequestMapping("/delete/car{id}")
+    @RequestMapping("/delete/car/{id}")
     public  String delCar(@PathVariable("id") long id){
         carRepository.deleteById(id);
         return "redirect:/";
